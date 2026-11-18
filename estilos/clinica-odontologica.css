@@ -1,0 +1,407 @@
+:root {
+    --primary: #0F4C5C;
+    /* Verde-azulado clínico sofisticado */
+    --primary-dark: #186592;
+    --secondary: #E0F2F1;
+    /* Azul de destaque */
+    --dark: #0f172a;
+    --text: #1E293B;
+    --text-light: #64748b;
+    --bg-light: #f8fafc;
+    --white: #ffffff;
+    --radius: 12px;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* Cabeçalho */
+.header {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 1.25rem;
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    background: #ccfbf1;
+    color: var(--primary-dark);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.hero-content h1 {
+    font-size: 2.75rem;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 40px;
+    padding-top: 24px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.hero-stats strong {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--dark);
+}
+
+.hero-stats span {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Estilo dos Slots de Imagem (Ajuda visual antes de você colocar as fotos) */
+.hero-image-box,
+.about-image-box,
+.card-img-wrapper,
+.gallery-item {
+    position: relative;
+    background-color: #e2e8f0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #cbd5e1;
+}
+
+.hero-image-box {
+    height: 420px;
+}
+
+.about-image-box {
+    height: 380px;
+}
+
+.card-img-wrapper {
+    height: 200px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px dashed #cbd5e1;
+}
+
+.gallery-item {
+    height: 260px;
+}
+
+.img-slot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+
+/* Esconde a borda pontilhada quando a imagem carregar */
+.placeholder-hint {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    padding: 16px;
+}
+
+/* Seções Gerais */
+.section {
+    padding: 80px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 48px;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+/* Sobre */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    color: var(--dark);
+    margin-bottom: 16px;
+}
+
+.check-list {
+    list-style: none;
+    margin-top: 24px;
+}
+
+.check-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 12px;
+}
+
+.check-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Cards de Tratamentos */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    padding: 24px;
+}
+
+.card-body h3 {
+    color: var(--dark);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Galeria */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Contato e Mapa */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.info-item {
+    margin-top: 20px;
+}
+
+.info-item strong {
+    display: block;
+    color: var(--dark);
+}
+
+.contact-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.map-box {
+    min-height: 360px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+/* Rodapé */
+.footer {
+    background-color: var(--dark);
+    color: #94a3b8;
+    padding: 32px 0;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Botão Flutuante WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: #25d366;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.05);
+}
+
+/* Responsividade (Celulares e Tablets) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .contact-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}
